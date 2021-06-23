@@ -16,10 +16,20 @@ Phase 6: -Close- - the loop closes and the process ends when all timers and inpu
 ## eventloop.js
 Run`$ node eventloop.js` to visualize Event Loop.
 
-You'll know:
+You'll see:
 - When `process.nextTick()` will be called
-- 
+- `setTimeout with 0ms` vs `setImmediate`
+- Those in polling phase
 
+## eventloop2.js
+Run `$ node eventloop2.js` to visualize unordered version of `eventloop.js`
+
+You'll see the exact same result in your terminal.
+
+Now uncomment the blocking loop in line 33 - 37 then run `$ node eventloop2.js`
+You'll see:
+- `setTimeout` in polling phase is blocked by blocking loop
+- the `setTimeout` takes more than 2 seconds after the Timer 3
 
 ## Installation
 
@@ -28,5 +38,4 @@ You'll know:
 
 2. `cd nodejs-runtime-checker`
 
-3.
 
